@@ -64,7 +64,7 @@ function App() {
               <i className="fa fa-bars"></i>
             </button>
             <a href="/">
-              <img src="/images/logo.png" width="150" to="/" />
+              <img src="/images/logo.png" width="150"/>
             </a>
           </div>
           <div>

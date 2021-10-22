@@ -83,7 +83,7 @@ export default function HomeScreen(props) {
       </div>
       <div className="row top">
         <div className="col-1">
-          <h3>Département</h3>
+          <h3>Catégories</h3>
           <div>
             {loadingCategories ? (
               <LoadingBox></LoadingBox>
