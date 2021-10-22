@@ -114,7 +114,7 @@ export default function SupportScreen() {
     <div className="row top full-container">
       <div className="col-1 support-users">
         {users.filter((x) => x._id !== userInfo._id).length === 0 && (
-          <MessageBox>No Online User Found</MessageBox>
+          <MessageBox>Aucun utilisateur en ligne trouvé</MessageBox>
         )}
         <ul>
           {users
@@ -142,14 +142,14 @@ export default function SupportScreen() {
       </div>
       <div className="col-3 support-messages">
         {!selectedUser._id ? (
-          <MessageBox>Select a user to start chat</MessageBox>
+          <MessageBox>Sélectionnez un utilisateur pour démarrer le chat</MessageBox>
         ) : (
           <div>
             <div className="row">
-              <strong>Chat with {selectedUser.name} </strong>
+              <strong>Parler avec {selectedUser.name} </strong>
             </div>
             <ul ref={uiMessagesRef}>
-              {messages.length === 0 && <li>No message.</li>}
+              {messages.length === 0 && <li>Pas de message.</li>}
               {messages.map((msg, index) => (
                 <li key={index}>
                   <strong>{`${msg.name}: `}</strong> {msg.body}
@@ -164,7 +164,7 @@ export default function SupportScreen() {
                   type="text"
                   placeholder="type message"
                 />
-                <button type="submit">Send</button>
+                <button type="submit">Envoyer</button>
               </form>
             </div>
           </div>
