@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL , {
+mongoose.connect("mongodb+srv://Wafa_Bergaoui:oneDirection@cluster0.xqv67.mongodb.net/E-commerce?retryWrites=true&w=majority" , {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
