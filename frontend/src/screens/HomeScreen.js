@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { listProducts } from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import Product from '../components/Product';
-import Rating from '../components/Rating';
-import Slider from '../components/Slider';
-import { prices, ratings } from '../utils';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { listProducts } from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import Product from "../components/Product";
+import Rating from "../components/Rating";
+import Slider from "../components/Slider";
+import { prices, ratings } from "../utils";
 
 export default function HomeScreen(props) {
   const {
-    name = 'all',
-    category = 'all',
+    name = "all",
+    category = "all",
     min = 0,
     max = 0,
     rating = 0,
-    order = 'newest',
+    order = "newest",
     pageNumber = 1,
   } = useParams();
   const dispatch = useDispatch();
@@ -33,8 +33,8 @@ export default function HomeScreen(props) {
     dispatch(
       listProducts({
         pageNumber,
-        name: name !== 'all' ? name : '',
-        category: category !== 'all' ? category : '',
+        name: name !== "all" ? name : "",
+        category: category !== "all" ? category : "",
         min,
         max,
         rating,
@@ -56,7 +56,7 @@ export default function HomeScreen(props) {
   return (
     <div>
       <div>
-        <Slider/>
+        <Slider />
       </div>
       <div className="row">
         {loading ? (
@@ -67,7 +67,7 @@ export default function HomeScreen(props) {
           <div>{products.length} Résultats</div>
         )}
         <div>
-          Trier par{' '}
+          Trier par{" "}
           <select
             value={order}
             onChange={(e) => {
@@ -93,8 +93,8 @@ export default function HomeScreen(props) {
               <ul>
                 <li>
                   <Link
-                    className={'all' === category ? 'active' : ''}
-                    to={getFilterUrl({ category: 'all' })}
+                    className={"all" === category ? "active" : ""}
+                    to={getFilterUrl({ category: "all" })}
                   >
                     Tout
                   </Link>
@@ -102,7 +102,7 @@ export default function HomeScreen(props) {
                 {categories.map((c) => (
                   <li key={c}>
                     <Link
-                      className={c === category ? 'active' : ''}
+                      className={c === category ? "active" : ""}
                       to={getFilterUrl({ category: c })}
                     >
                       {c}
@@ -120,25 +120,10 @@ export default function HomeScreen(props) {
                   <Link
                     to={getFilterUrl({ min: p.min, max: p.max })}
                     className={
-                      `${p.min}-${p.max}` === `${min}-${max}` ? 'active' : ''
+                      `${p.min}-${p.max}` === `${min}-${max}` ? "active" : ""
                     }
                   >
                     {p.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3>Moy. avis client</h3>
-            <ul>
-              {ratings.map((r) => (
-                <li key={r.name}>
-                  <Link
-                    to={getFilterUrl({ rating: r.rating })}
-                    className={`${r.rating}` === `${rating}` ? 'active' : ''}
-                  >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
@@ -163,7 +148,7 @@ export default function HomeScreen(props) {
               <div className="row center pagination">
                 {[...Array(pages).keys()].map((x) => (
                   <Link
-                    className={x + 1 === page ? 'active' : ''}
+                    className={x + 1 === page ? "active" : ""}
                     key={x + 1}
                     to={getFilterUrl({ page: x + 1 })}
                   >

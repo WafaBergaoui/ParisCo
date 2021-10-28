@@ -31,6 +31,7 @@ import {
   userUpdateProfileReducer,
   userUpdateReducer,
 } from './reducers/userReducers';
+import categoryReducer from "../src/reducers/categoryReducers";
 
 const initialState = {
   userSignin: {
@@ -74,6 +75,7 @@ const reducer = combineReducers({
   productReviewCreate: productReviewCreateReducer,
   userAddressMap: userAddressMapReducer,
   orderSummary: orderSummaryReducer,
+  category: categoryReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

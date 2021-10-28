@@ -37,7 +37,7 @@ export default function Slider() {
     fontWeight: "bold",
   };
   const slideNumberStyle = {
-    fontSize: "20px",
+    fontSize: "17px",
     fontWeight: "bold",
   };
 
